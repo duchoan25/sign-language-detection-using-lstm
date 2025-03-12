@@ -67,7 +67,10 @@ Chạy script collect_data.py để thu thập dữ liệu từ webcam:
 Chạy script train.py để huấn luyện mô hình LSTM
 
 4. Nhận diện thời gian thực / Real-time Prediction
-Chạy script predict.py để nhận diện ngôn ngữ ký hiệu từ webcam:
+Chạy script để nhận diện ngôn ngữ ký hiệu từ webcam:
+
+5. Ve_So_Do_Mo_Hinh_Va_So_sanh 
+Chạy script để vẽ sơ đồ và so sách với các model khác
 
 # Kết quả / Results
 Mô hình đạt độ chính xác cao trên tập kiểm tra (test accuracy: 1.0).
