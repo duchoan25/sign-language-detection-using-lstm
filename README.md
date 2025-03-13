@@ -87,3 +87,9 @@ Hệ thống được thiết kế với kiến trúc đa tầng:
    ```bash
    git clone https://github.com/DangTruongDuong/sign-language-detection-using-lstm
    cd sign-language-detection-using-lstm
+2.📚 Cài đặt các thư viện
+    ```bash 
+    pip install opencv-python numpy mediapipe tensorflow scikit-learn pygame Pillow
+
+3.⚡ Chuẩn bị thư mục dữ liệu và âm thanh
+
