@@ -7,8 +7,8 @@
   <img src="docs/images/AIoTLab_logo.png" alt="AIoTLab Logo" width="170"/>
 </p>
 
-[![Made by AIoTLab](https://img.shields.io/badge/Made%20by%20AIoTLab-blue?style=for-the-badge)](https://fit.dainam.edu.vn)
-[![Faculty of IT](https://img.shields.io/badge/Faculty%20of%20Information%20Technology-green?style=for-the-badge)](https://fit.dainam.edu.vn)
+https://github.com/drkhanusa/DNU_PlagiarismChecker/blob/main/docs/images/logo.png
+https://github.com/drkhanusa/DNU_PlagiarismChecker/raw/main/docs/images/AIoTLab_logo.png
 [![DaiNam University](https://img.shields.io/badge/DaiNam%20University-red?style=for-the-badge)](https://dainam.edu.vn)
 
 </div>
