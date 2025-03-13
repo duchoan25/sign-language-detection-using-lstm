@@ -74,7 +74,19 @@ Chạy script để nhận diện ngôn ngữ ký hiệu từ webcam:
 5. Ve_So_Do_Mo_Hinh_Va_So_sanh 
 Chạy script để vẽ sơ đồ và so sách với các model khác
 
-Kết quả / Results
+# đánh Giá
+1. Độ chính xác mô hình 
+Accuracy: 100% → Mô hình nhận diện hoàn hảo trên tập dữ liệu thử nghiệm.
+Loss: 0.0047 → Sai số rất nhỏ, cho thấy mô hình học tốt và ổn định.
+Test size: 10% → Đảm bảo kiểm tra khách quan.
+
+2. Thử nghiệm trên tập dữ liệu 
+100 video/ hành động, đảm bảo đa dạng mẫu dữ liệu.
+Thời gian nhận diện nhanh, phản hồi gần như tức thì.
+![image](https://github.com/user-attachments/assets/a0a7133c-7f61-47e9-8de1-23e560f8c541)
+
+
+# Kết quả / Results
 Hiệu suất mô hình / Model Performance
 Mô hình LSTM đạt độ chính xác cao (test accuracy: 1.0) trên tập kiểm tra, dựa trên dữ liệu huấn luyện tốt.
 Hiệu suất có thể thay đổi tùy thuộc vào chất lượng dữ liệu và điều kiện ánh sáng.
