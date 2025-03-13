@@ -3,8 +3,8 @@
 <div align="center">
 
 <p align="center">
-  <img src="docs/images/logo.png" alt="DaiNam University Logo" width="200"/>
-  <img src="docs/images/AIoTLab_logo.png" alt="AIoTLab Logo" width="170"/>
+  <img src="images/logo.png" alt="DaiNam University Logo" width="200"/>
+  <img src="images/AIoTLab_logo.png" alt="AIoTLab Logo" width="170"/>
 </p>
 
 [https://github.com/drkhanusa/DNU_PlagiarismChecker/blob/main/docs/images/logo.png](https://github.com/drkhanusa/DNU_PlagiarismChecker/blob/main/docs/images/logo.png?raw=true)
