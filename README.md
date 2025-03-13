@@ -1,4 +1,5 @@
-# 🎓 Hệ Thống Nhận Diện Ngôn Ngữ Ký Hiệu Tiếng Việt
+# 🎓 ỨNG DỤNG NHẬN DIỆN CỬ CHỈ TAY HỖ TRỢ GIAO TIẾP CHO NGƯỜI KHUYẾT TẬT.
+
 
 <div align="center">
 
