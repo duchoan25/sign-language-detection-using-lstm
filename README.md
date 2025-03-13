@@ -1,68 +1,68 @@
-# 🎓 Vietnamese Sign Language Recognition System
+# 🎓 Hệ Thống Nhận Diện Ngôn Ngữ Ký Hiệu Tiếng Việt
 
 <div align="center">
 
 <p align="center">
-  <img src="images/logo.png" alt="DaiNam University Logo" width="200"/>
-  <img src="images/AIoTLab_logo.png" alt="AIoTLab Logo" width="170"/>
+  <img src="images/logo.png" alt="Logo Đại học Đại Nam" width="200"/>
+  <img src="images/AIoTLab_logo.png" alt="Logo AIoTLab" width="170"/>
 </p>
 
 </div>
 
-<h3 align="center">🔬 Empowering Communication Through AI-Driven Sign Language Recognition</h3>
+<h3 align="center">🔬 Tăng Cường Giao Tiếp Bằng Công Nghệ Nhận Diện Ký Hiệu Dựa Trên AI</h3>
 
 <p align="center">
-  <strong>A Real-Time Vietnamese Sign Language Recognition System Powered by Mediapipe and SignLSTM</strong>
+  <strong>Hệ thống nhận diện ngôn ngữ ký hiệu tiếng Việt thời gian thực sử dụng Mediapipe và SignLSTM</strong>
 </p>
 
 <p align="center">
-  <a href="#-architecture">Architecture</a> •
-  <a href="#-key-features">Features</a> •
-  <a href="#-tech-stack">Tech Stack</a> •
-  <a href="#-installation">Installation</a> •
-  <a href="#-getting-started">Getting Started</a> •
-  <a href="#-documentation">Docs</a>
+  <a href="#🏗️-kiến-trúc-hệ-thống">Kiến trúc</a> •
+  <a href="#✨-tính-năng-nổi-bật">Tính năng</a> •
+  <a href="#🔧-công-nghệ-sử-dụng">Công nghệ</a> •
+  <a href="#📥-cài-đặt">Cài đặt</a> •
+  <a href="#🚀-bắt-đầu-sử-dụng">Sử dụng</a> •
+  <a href="#📚-tài-liệu-hướng-dẫn">Tài liệu</a>
 </p>
 
-## 🏗️ Architecture
+## 🏗️ Kiến trúc hệ thống
 
 <p align="center">
-  <img src="docs/images/architecture_signlstm.png" alt="System Architecture" width="800"/>
+  <img src="docs/images/architecture_signlstm.png" alt="Kiến trúc hệ thống" width="800"/>
 </p>
 
-The system employs a multi-stage architecture:
+Hệ thống được thiết kế với kiến trúc đa tầng:
 
-1. **📹 Input Processing Layer**: Captures webcam video at 1280x720 resolution and extracts 1662 keypoints (33 pose, 468 face, 21 left hand, 21 right hand) using Mediapipe Holistic.
-2. **🧠 Model Layer**: Processes sequences of 30 frames with a two-layer SignLSTM model (64 units, dropout 0.2) for action recognition.
-3. **🔊 Output Layer**: Displays predicted actions on-screen with styled landmarks and plays corresponding audio if confidence exceeds 0.8 for at least 1 second.
+1. **📹 Tầng xử lý đầu vào**: Quay video từ webcam ở độ phân giải 1280x720 và trích xuất 1662 điểm đặc trưng (33 điểm tư thế, 468 điểm khuôn mặt, 21 điểm tay trái, 21 điểm tay phải) bằng Mediapipe Holistic.
+2. **🧠 Tầng mô hình**: Xử lý chuỗi 30 khung hình bằng mô hình SignLSTM hai tầng (64 đơn vị, dropout 0.2) để nhận diện hành động.
+3. **🔊 Tầng đầu ra**: Hiển thị hành động dự đoán trên màn hình với các điểm đặc trưng được tô màu và phát âm thanh tương ứng nếu độ tin cậy vượt quá 0.8 trong ít nhất 1 giây.
 
-## ✨ Key Features
+## ✨ Tính năng nổi bật
 
-### 🧠 Advanced AI Technology
-- **SignLSTM Model**: Two-layer LSTM (64 units each, dropout 0.2) with Dense layers (32 units ReLU, 10 units Softmax) for accurate action classification, achieving 90% test accuracy.
-- **Mediapipe Holistic**: Extracts 1662 keypoints (pose, face, hands) with min detection/tracking confidence of 0.5 for robust gesture detection.
-- **Real-time Recognition**: Processes 30-frame sequences with an inference time of ~30ms, supporting 10 Vietnamese sign language actions.
+### 🧠 Công nghệ AI tiên tiến
+- **Mô hình SignLSTM**: Gồm hai tầng LSTM (64 đơn vị mỗi tầng, dropout 0.2) kết hợp với tầng Dense (32 đơn vị ReLU, 10 đơn vị Softmax), đạt độ chính xác 90% trên tập kiểm tra.
+- **Mediapipe Holistic**: Trích xuất 1662 điểm đặc trưng (tư thế, khuôn mặt, tay) với độ tin cậy tối thiểu 0.5 để phát hiện cử chỉ chính xác.
+- **Nhận diện thời gian thực**: Xử lý chuỗi 30 khung hình với thời gian suy luận trung bình ~30ms, hỗ trợ 10 hành động ký hiệu tiếng Việt.
 
-### ⚡ High-Performance Architecture
-- **Efficient Training**: Uses Adam optimizer (learning rate 0.0001), categorical crossentropy loss, and early stopping (patience 20) to prevent overfitting.
-- **Action Stability Detection**: Ensures actions are stable (≥ 1 second) before triggering audio playback, with a 2-second cooldown to prevent overlap.
-- **Scalable Design**: Supports 10 actions with 100 sequences per action (30 frames each), expandable with additional data.
+### ⚡ Kiến trúc hiệu suất cao
+- **Huấn luyện hiệu quả**: Sử dụng bộ tối ưu Adam (tốc độ học 0.0001), hàm mất mát categorical crossentropy, và early stopping (patience 20) để tránh overfitting.
+- **Phát hiện hành động ổn định**: Đảm bảo hành động kéo dài ≥ 1 giây trước khi phát âm thanh, với thời gian chờ 2 giây giữa các lần phát để tránh trùng lặp.
+- **Thiết kế mở rộng**: Hỗ trợ 10 hành động với 100 chuỗi mỗi hành động (30 khung hình mỗi chuỗi), dễ dàng mở rộng với dữ liệu mới.
 
-### 📊 Comprehensive Analysis
-- **Styled Visualizations**: Displays keypoints with custom colors (e.g., orange for pose, blue for hands) and on-screen action labels in Vietnamese using Arial font.
-- **Audio Feedback**: Plays pre-recorded `.mp3` files (e.g., `xin_chao.mp3`) for recognized actions, enhancing communication.
-- **Action Recognition**: Recognizes 10 actions: "null", "xin chao", "cam on", "xin loi", "hanh phuc", "tuyet voi", "yeu thuong", "ghet", "biet on", "tam biet".
+### 📊 Phân tích toàn diện
+- **Hình ảnh trực quan**: Hiển thị các điểm đặc trưng với màu sắc tùy chỉnh (ví dụ: cam cho tư thế, xanh dương cho tay) và nhãn hành động bằng tiếng Việt với font Arial.
+- **Phản hồi âm thanh**: Phát file `.mp3` tương ứng (ví dụ: `xin_chao.mp3`) khi nhận diện hành động, hỗ trợ giao tiếp hiệu quả.
+- **Hành động nhận diện**: Nhận diện 10 hành động: "null", "xin chao", "cam on", "xin loi", "hanh phuc", "tuyet voi", "yeu thuong", "ghet", "biet on", "tam biet".
 
-## 🔧 Tech Stack
+## 🔧 Công nghệ sử dụng
 
 <div align="center">
 
-### Core Technologies
+### Công nghệ chính
 [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=yellow)](https://www.python.org/)
 [![Mediapipe](https://img.shields.io/badge/Mediapipe-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://mediapipe.dev/)
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)](https://www.tensorflow.org/)
 [![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)](https://opencv.org/)
-### Supporting Libraries
+### Thư viện hỗ trợ
 [![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)](https://numpy.org/)
 [![Pygame](https://img.shields.io/badge/Pygame-000000?style=for-the-badge&logo=pygame&logoColor=yellow)](https://www.pygame.org/)
 [![Pillow](https://img.shields.io/badge/Pillow-000000?style=for-the-badge&logo=python&logoColor=white)](https://python-pillow.org/)
@@ -70,19 +70,19 @@ The system employs a multi-stage architecture:
 
 </div>
 
-## 📥 Installation
+## 📥 Cài đặt
 
-### 🛠️ Prerequisites
+### 🛠️ Yêu cầu hệ thống
 
-- 🐍 **Python** `3.8+` - Core programming language.
-- 📹 **Webcam** - For real-time gesture capture (recommended resolution: 1280x720).
-- 💾 **RAM** `4GB+` - Recommended for smooth performance.
-- 💻 **CPU** `2+ cores` - For video processing and inference.
-- 🖴 **Storage** `2GB+` - For data, models, and audio files.
+- 🐍 **Python** `3.8+` - Ngôn ngữ lập trình chính.
+- 📹 **Webcam** - Dùng để quay video cử chỉ (khuyến nghị độ phân giải 1280x720).
+- 💾 **RAM** `4GB+` - Đảm bảo hiệu suất mượt mà.
+- 💻 **CPU** `2+ nhân` - Dùng để xử lý video và suy luận.
+- 🖴 **Dung lượng lưu trữ** `2GB+` - Để lưu dữ liệu, mô hình và file âm thanh.
 
-### ⚙️ Project Setup
+### ⚙️ Hướng dẫn cài đặt
 
-1. 📦 **Clone Repository**
+1. 📦 **Tải mã nguồn**
    ```bash
    git clone https://github.com/DangTruongDuong/sign-language-detection-using-lstm
    cd sign-language-detection-using-lstm
