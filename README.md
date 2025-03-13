@@ -27,8 +27,8 @@
 ## 🏗️ Kiến trúc hệ thống
 
 <p align="center">
- ![image](https://github.com/user-attachments/assets/70615b0d-0e33-4954-a755-850463d5cf07)
-
+  
+ ![image](https://github.com/user-attachments/assets/a5cbe623-ee82-4d33-acc6-5cb40792f1ae)
 </p>
 
 Hệ thống được thiết kế với kiến trúc đa tầng:
