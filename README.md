@@ -27,7 +27,8 @@
 ## 🏗️ Kiến trúc hệ thống
 
 <p align="center">
-  <img src="docs/images/architecture_signlstm.png" alt="Kiến trúc hệ thống" width="800"/>
+ ![image](https://github.com/user-attachments/assets/70615b0d-0e33-4954-a755-850463d5cf07)
+
 </p>
 
 Hệ thống được thiết kế với kiến trúc đa tầng:
