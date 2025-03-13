@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎓 ỨNG DỤNG NHẬN DIỆN CỬ CHỈ TAY HỖ TRỢ GIAO TIẾP CHO <br> NGƯỜI KHUYẾT TẬT
+# 🎓 ỨNG DỤNG NHẬN DIỆN CỬ CHỈ TAY HỖ TRỢ GIAO <br> TIẾP CHO NGƯỜI KHUYẾT TẬT
 
 </div>
 
