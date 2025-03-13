@@ -18,7 +18,8 @@
 ## 🏗️ Kiến trúc hệ thống
 
 <p align="center">
-  <img src="docs/images/architecture_signlstm.png" alt="Kiến trúc hệ thống" width="800"/>
+  
+  ![image](https://github.com/user-attachments/assets/1144a93e-ac5b-4e27-9446-c1072cb4b44a)
 </p>
 
 Hệ thống được thiết kế với kiến trúc đa tầng:
@@ -114,8 +115,8 @@ Hệ thống được thiết kế với kiến trúc đa tầng:
 
 ## 📝 Bản quyền
 
-© 2025 AIoTLab, Khoa Công nghệ Thông tin, Đại học Đại Nam. Mọi quyền được bảo lưu.
+© 2025 Nhóm 1-CNTT_16-01, Khoa Công nghệ Thông tin, Đại học Đại Nam. Mọi quyền được bảo lưu.
 
 <div align="center">
-Được thực hiện bởi 💻 AIoTLab tại Đại học Đại Nam
+Được thực hiện bởi 💻 Nhóm 1-CNTT_16-01 tại Đại học Đại Nam
 </div>
