@@ -103,6 +103,7 @@ Thời gian nhận diện nhanh, phản hồi gần như tức thì.
 
 
 # Kết quả / Results
+
 Hiệu suất mô hình / Model Performance
 Mô hình LSTM đạt độ chính xác cao (test accuracy: 1.0) trên tập kiểm tra, dựa trên dữ liệu huấn luyện tốt.
 Hiệu suất có thể thay đổi tùy thuộc vào chất lượng dữ liệu và điều kiện ánh sáng.
