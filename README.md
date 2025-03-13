@@ -86,27 +86,56 @@ Hệ thống được thiết kế với kiến trúc đa tầng:
 
 ## 🚀 Bắt đầu sử dụng
 
-### ⚡ Khởi động nhanh
+### ⚡ Khởi động 
    ```bash
-   python predict.py
+   Run_With_Sound.py or Run_No_Sound
    ```
 
 ### 📥 Thu thập dữ liệu
    ```bash
-   python collect_data.py
+   Thu_Thap_Data.py
    ```
 
 ### 🧠 Huấn luyện mô hình
    ```bash
-   python train.py
+   huan_luyen_mo_hinh.py
    ```
 
 ### 📊 Đánh giá mô hình
    ```bash
-   tensorboard --logdir=Logs
+   Ve_mo_So_do_mo_hinh_va_so_sanh.ipynb
    ```
+6. **Kết quả và độ chính xác**
+📊 Kết quả
 
-## 📚 Tài liệu hướng dẫn
+![image](https://github.com/user-attachments/assets/1bfaf6b2-ffc3-4b9a-a2da-1d050caa8122)
+
+  Hiệu suất mô hình
+  Độ chính xác: Mô hình SignLSTM đạt 90% trên tập kiểm tra, với 10% dữ liệu được chia để đánh giá (90% train, 10% test).
+  Thời gian suy luận: Trung bình ~30ms mỗi khung hình, cho phép xử lý thời gian thực với tốc độ 20-33 FPS trên webcam 1280x720.
+  Nhầm lẫn hành động: Nhầm lẫn chủ yếu xảy ra giữa các hành động tương tự như "xin chao" và "cam on" (dựa trên quan sát từ dữ liệu thử nghiệm).
+  Nhận diện thời gian thực
+  Hệ thống hoạt động ổn định trên webcam tiêu chuẩn, hiển thị nhãn hành động và phát âm thanh chính xác khi độ tin cậy ≥ 0.8 trong ≥ 1 giây.
+  Tốc độ xử lý trung bình 20-33 FPS, phụ thuộc vào hiệu suất phần cứng.
+  Hạn chế và cải tiến
+  Hạn chế: Yêu cầu ánh sáng tốt để Mediapipe hoạt động hiệu quả; chỉ nhận diện các hành động đã được huấn luyện.
+  Cải tiến đề xuất: Thu thập thêm dữ liệu cho các hành động dễ nhầm lẫn (như "xin chao", "hanh phuc"); tối ưu hóa mô hình bằng pruning hoặc quantization để tăng tốc độ trên thiết bị yếu.
+
+  ![image](https://github.com/user-attachments/assets/745494bf-9afa-49f3-9b6b-55849eee3d6d)
+  
+  so sánh phân phối thời gian suy luận với các mô hình khác
+
+  ![image](https://github.com/user-attachments/assets/dd017db6-ee3d-47d2-909e-2e81dcdb52e5)
+
+  so sánh hiệu xuất với các mô hình khác
+
+  ![image](https://github.com/user-attachments/assets/a9a6f907-c670-4380-8888-ec71a4f7e3d8)
+
+  Ma trận nhần lẫn
+
+
+ ## 📚 Tài liệu hướng dẫn
+  
 
 - 📖 Hướng dẫn cài đặt
 - 👥 Hướng dẫn sử dụng
