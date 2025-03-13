@@ -83,7 +83,7 @@ Test size: 10% → Đảm bảo kiểm tra khách quan.
 2. Thử nghiệm trên tập dữ liệu 
 100 video/ hành động, đảm bảo đa dạng mẫu dữ liệu.
 Thời gian nhận diện nhanh, phản hồi gần như tức thì.
-![image](https://github.com/user-attachments/assets/a0a7133c-7f61-47e9-8de1-23e560f8c541)
+
 
 
 # Kết quả / Results
