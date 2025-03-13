@@ -57,7 +57,8 @@ This project implements a Sign Language Recognition system using Mediapipe for k
    Thêm các file âm thanh (định dạng .mp3) tương ứng với các hành động (ví dụ: xin chao.mp3, cam on.mp3, v.v.).
    
 7. Cấu trúc dự án / Project Structure
-![image](https://github.com/user-attachments/assets/21bb4df7-9f11-4cdb-bbbd-26754adc0436)
+![image](https://github.com/user-attachments/assets/f5d5a126-5d44-4e22-a776-d109a1385415)
+
 
 # Sử dụng / Usage
 1. Thu thập dữ liệu / Data Collection
