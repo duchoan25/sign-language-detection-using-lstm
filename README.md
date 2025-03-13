@@ -75,6 +75,15 @@ Chạy script để nhận diện ngôn ngữ ký hiệu từ webcam:
 Chạy script để vẽ sơ đồ và so sách với các model khác
 
 # đánh Giá
+
+image:
+![image](https://github.com/user-attachments/assets/67896764-937d-488a-a1cc-fafdee977ba9)
+phân phối suy luận (ms)
+![image](https://github.com/user-attachments/assets/3c4088ca-1422-4fd8-85e7-729588116a75)
+so sánh hiệu suất với các mô hình khác
+![image](https://github.com/user-attachments/assets/ed91a0ed-b02b-4b2f-9903-cbe8b563c4bf)
+mã trận nhầm lẫn
+
 1. Độ chính xác mô hình 
 Accuracy: 100% → Mô hình nhận diện hoàn hảo trên tập dữ liệu thử nghiệm.
 Loss: 0.0047 → Sai số rất nhỏ, cho thấy mô hình học tốt và ổn định.
@@ -83,6 +92,7 @@ Test size: 10% → Đảm bảo kiểm tra khách quan.
 2. Thử nghiệm trên tập dữ liệu 
 100 video/ hành động, đảm bảo đa dạng mẫu dữ liệu.
 Thời gian nhận diện nhanh, phản hồi gần như tức thì.
+
 
 
 
