@@ -1,142 +1,92 @@
-# Nhận Diện Ngôn Ngữ Ký Hiệu với Mediapipe và LSTM / Sign Language Recognition with Mediapipe and LSTM
+# 🎓 Vietnamese Sign Language Recognition System
 
-## Giới thiệu / Introduction
+<div align="center">
 
-Dự án này triển khai một hệ thống nhận diện ngôn ngữ ký hiệu (Sign Language Recognition) sử dụng Mediapipe để trích xuất các điểm mốc (keypoints) từ video và mô hình LSTM (Long Short-Term Memory) để phân loại các hành động. Hệ thống có thể nhận diện các hành động ký hiệu tiếng Việt như "xin chào", "cảm ơn", "tạm biệt", v.v., đồng thời phát âm thanh tương ứng với hành động được nhận diện.
+<p align="center">
+  <img src="docs/images/logo.png" alt="DaiNam University Logo" width="200"/>
+  <img src="docs/images/AIoTLab_logo.png" alt="AIoTLab Logo" width="170"/>
+</p>
 
-This project implements a Sign Language Recognition system using Mediapipe for keypoint extraction from video and an LSTM (Long Short-Term Memory) model for action classification. The system can recognize Vietnamese sign language actions such as "xin chào" (hello), "cảm ơn" (thank you), "tạm biệt" (goodbye), etc., and play corresponding audio for the recognized actions.
+[![Made by AIoTLab](https://img.shields.io/badge/Made%20by%20AIoTLab-blue?style=for-the-badge)](https://fit.dainam.edu.vn)
+[![Faculty of IT](https://img.shields.io/badge/Faculty%20of%20Information%20Technology-green?style=for-the-badge)](https://fit.dainam.edu.vn)
+[![DaiNam University](https://img.shields.io/badge/DaiNam%20University-red?style=for-the-badge)](https://dainam.edu.vn)
 
----
+</div>
 
-## Các tính năng / Features
+<h3 align="center">🔬 Empowering Communication Through AI-Driven Sign Language Recognition</h3>
 
-- **Thu thập dữ liệu**: Sử dụng Mediapipe để trích xuất các điểm mốc từ khuôn mặt, tay và cơ thể, lưu dữ liệu vào định dạng `.npy`.
-- **Huấn luyện mô hình**: Sử dụng mô hình LSTM để phân loại các hành động ký hiệu.
-- **Nhận diện thời gian thực**: Nhận diện các hành động ký hiệu từ video webcam và hiển thị kết quả trên màn hình.
-- **Phát âm thanh**: Phát âm thanh tương ứng với hành động được nhận diện (nếu có file âm thanh).
-- **Hỗ trợ tiếng Việt**: Giao diện và hành động ký hiệu được thiết kế cho ngôn ngữ tiếng Việt.
+<p align="center">
+  <strong>A Real-Time Vietnamese Sign Language Recognition System Powered by Mediapipe and SignLSTM</strong>
+</p>
 
-- **Data Collection**: Uses Mediapipe to extract keypoints from the face, hands, and body, saving data in `.npy` format.
-- **Model Training**: Uses an LSTM model to classify sign language actions.
-- **Real-time Recognition**: Recognizes sign language actions from webcam video and displays results on the screen.
-- **Audio Playback**: Plays audio corresponding to the recognized action (if the audio file exists).
-- **Vietnamese Support**: The interface and sign actions are designed for the Vietnamese language.
+<p align="center">
+  <a href="#-architecture">Architecture</a> •
+  <a href="#-key-features">Features</a> •
+  <a href="#-tech-stack">Tech Stack</a> •
+  <a href="#-installation">Installation</a> •
+  <a href="#-getting-started">Getting Started</a> •
+  <a href="#-documentation">Docs</a>
+</p>
 
----
+## 🏗️ Architecture
 
-## Cài đặt / Installation
+<p align="center">
+  <img src="docs/images/architecture_signlstm.png" alt="System Architecture" width="800"/>
+</p>
 
-### Yêu cầu / Requirements
+The system employs a multi-stage architecture:
 
-- Python 3.8+
-- Các thư viện Python:
-  - `opencv-python` (cv2)
-  - `numpy`
-  - `mediapipe`
-  - `tensorflow`
-  - `scikit-learn`
-  - `pygame`
-  - `Pillow` (PIL)
+1. **📹 Input Processing Layer**: Captures webcam video at 1280x720 resolution and extracts 1662 keypoints (33 pose, 468 face, 21 left hand, 21 right hand) using Mediapipe Holistic.
+2. **🧠 Model Layer**: Processes sequences of 30 frames with a two-layer SignLSTM model (64 units, dropout 0.2) for action recognition.
+3. **🔊 Output Layer**: Displays predicted actions on-screen with styled landmarks and plays corresponding audio if confidence exceeds 0.8 for at least 1 second.
 
-### Hướng dẫn cài đặt / Installation Steps
+## ✨ Key Features
 
-1. **Cài đặt Python**: Đảm bảo bạn đã cài Python 3.8 hoặc cao hơn.
+### 🧠 Advanced AI Technology
+- **SignLSTM Model**: Two-layer LSTM (64 units each, dropout 0.2) with Dense layers (32 units ReLU, 10 units Softmax) for accurate action classification, achieving 90% test accuracy.
+- **Mediapipe Holistic**: Extracts 1662 keypoints (pose, face, hands) with min detection/tracking confidence of 0.5 for robust gesture detection.
+- **Real-time Recognition**: Processes 30-frame sequences with an inference time of ~30ms, supporting 10 Vietnamese sign language actions.
 
-2. **Tạo môi trường ảo (khuyến nghị)** / Create a virtual environment (recommended):
+### ⚡ High-Performance Architecture
+- **Efficient Training**: Uses Adam optimizer (learning rate 0.0001), categorical crossentropy loss, and early stopping (patience 20) to prevent overfitting.
+- **Action Stability Detection**: Ensures actions are stable (≥ 1 second) before triggering audio playback, with a 2-second cooldown to prevent overlap.
+- **Scalable Design**: Supports 10 actions with 100 sequences per action (30 frames each), expandable with additional data.
+
+### 📊 Comprehensive Analysis
+- **Styled Visualizations**: Displays keypoints with custom colors (e.g., orange for pose, blue for hands) and on-screen action labels in Vietnamese using Arial font.
+- **Audio Feedback**: Plays pre-recorded `.mp3` files (e.g., `xin_chao.mp3`) for recognized actions, enhancing communication.
+- **Action Recognition**: Recognizes 10 actions: "null", "xin chao", "cam on", "xin loi", "hanh phuc", "tuyet voi", "yeu thuong", "ghet", "biet on", "tam biet".
+
+## 🔧 Tech Stack
+
+<div align="center">
+
+### Core Technologies
+[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=yellow)](https://www.python.org/)
+[![Mediapipe](https://img.shields.io/badge/Mediapipe-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://mediapipe.dev/)
+[![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)](https://www.tensorflow.org/)
+[![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)](https://opencv.org/)
+### Supporting Libraries
+[![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)](https://numpy.org/)
+[![Pygame](https://img.shields.io/badge/Pygame-000000?style=for-the-badge&logo=pygame&logoColor=yellow)](https://www.pygame.org/)
+[![Pillow](https://img.shields.io/badge/Pillow-000000?style=for-the-badge&logo=python&logoColor=white)](https://python-pillow.org/)
+[![Scikit-learn](https://img.shields.io/badge/Scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
+
+</div>
+
+## 📥 Installation
+
+### 🛠️ Prerequisites
+
+- 🐍 **Python** `3.8+` - Core programming language.
+- 📹 **Webcam** - For real-time gesture capture (recommended resolution: 1280x720).
+- 💾 **RAM** `4GB+` - Recommended for smooth performance.
+- 💻 **CPU** `2+ cores` - For video processing and inference.
+- 🖴 **Storage** `2GB+` - For data, models, and audio files.
+
+### ⚙️ Project Setup
+
+1. 📦 **Clone Repository**
    ```bash
-   python -m venv venv
-   source venv/bin/activate  # Trên Windows: venv\Scripts\activate
-3. Cài đặt các thư viện cần thiết / Install required libraries
-  pip install opencv-python numpy mediapipe tensorflow scikit-learn pygame Pillow
-
-5. Tải font chữ hỗ trợ tiếng Việt / Download a font supporting Vietnamese:
-   Dự án sử dụng font arial.ttf. Nếu không có, bạn có thể tải font hỗ trợ tiếng Việt (ví dụ: Arial hoặc Times New Roman) và đặt vào thư mục phù hợp, hoặc chỉnh sửa đường dẫn font trong file predict.py.
-   
-6. Chuẩn bị thư mục âm thanh / Prepare the audio folder:
-   Tạo thư mục sounds/ trong thư mục dự án.
-   Thêm các file âm thanh (định dạng .mp3) tương ứng với các hành động (ví dụ: xin chao.mp3, cam on.mp3, v.v.).
-   
-7. Cấu trúc dự án / Project Structure
-
-![image](https://github.com/user-attachments/assets/f5d5a126-5d44-4e22-a776-d109a1385415)
-
-
-# Sử dụng / Usage
-1. Thu thập dữ liệu / Data Collection
-Chạy script collect_data.py để thu thập dữ liệu từ webcam:
-
-3. Huấn luyện mô hình / Model Training
-Chạy script train.py để huấn luyện mô hình LSTM
-
-4. Nhận diện thời gian thực / Real-time Prediction
-Chạy script để nhận diện ngôn ngữ ký hiệu từ webcam:
-
-5. Ve_So_Do_Mo_Hinh_Va_So_sanh 
-Chạy script để vẽ sơ đồ và so sách với các model khác
-
-# đánh Giá
-
-image:
-![image](https://github.com/user-attachments/assets/67896764-937d-488a-a1cc-fafdee977ba9)
-phân phối suy luận (ms)
-
-
-![image](https://github.com/user-attachments/assets/3c4088ca-1422-4fd8-85e7-729588116a75)
-so sánh hiệu suất với các mô hình khác
-
-
-![image](https://github.com/user-attachments/assets/ed91a0ed-b02b-4b2f-9903-cbe8b563c4bf)
-
-ma trận nhầm lẫn
-
-
-1. Độ chính xác mô hình 
-Accuracy: 100% → Mô hình nhận diện hoàn hảo trên tập dữ liệu thử nghiệm.
-Loss: 0.0047 → Sai số rất nhỏ, cho thấy mô hình học tốt và ổn định.
-Test size: 10% → Đảm bảo kiểm tra khách quan.
-
-2. Thử nghiệm trên tập dữ liệu 
-100 video/ hành động, đảm bảo đa dạng mẫu dữ liệu.
-Thời gian nhận diện nhanh, phản hồi gần như tức thì.
-
-
-
-
-# Kết quả / Results
-Video Kết quả
-https://drive.google.com/file/d/13nO507BZQJhe5IU-jVivzBrfZda2VcVg/view?usp=sharing
-
-
-Hiệu suất mô hình / Model Performance
-Mô hình LSTM đạt độ chính xác cao (test accuracy: 1.0) trên tập kiểm tra, dựa trên dữ liệu huấn luyện tốt.
-Hiệu suất có thể thay đổi tùy thuộc vào chất lượng dữ liệu và điều kiện ánh sáng.
-Nhận diện thời gian thực / Real-time Recognition
-Hệ thống hoạt động ổn định với webcam có độ phân giải 1280x720.
-Thời gian xử lý mỗi khung hình phụ thuộc vào phần cứng, nhưng trung bình khoảng 30-50ms trên máy tính thông thường.
-Các hành động được nhận diện / Recognized Actions
-Hệ thống nhận diện thành công 10 hành động ký hiệu tiếng Việt:
-"null" (không hành động).
-"xin chào" (hello).
-"cảm ơn" (thank you).
-"xin lỗi" (sorry).
-"hạnh phúc" (happy).
-"tuyệt vời" (great).
-"yêu thương" (love).
-"ghét" (hate).
-"biết ơn" (grateful).
-"tạm biệt" (goodbye).
-Hạn chế và cải tiến / Limitations and Improvements
-Hạn chế / Limitations
-Yêu cầu ánh sáng tốt: Mediapipe cần ánh sáng đầy đủ và góc quay rõ ràng để trích xuất keypoints chính xác. Ánh sáng yếu hoặc góc quay bị che khuất có thể làm giảm hiệu suất.
-Chỉ nhận diện hành động đã huấn luyện: Hệ thống chỉ nhận diện các cử chỉ đã được thu thập và huấn luyện trước đó, không tự động học cử chỉ mới.
-Tốc độ chưa tối ưu: Chưa được tối ưu cho các thiết bị phần cứng yếu (như Raspberry Pi), dẫn đến độ trễ khi nhận diện trên thiết bị thấp.
-Cải tiến / Improvements
-Thêm nhiều hành động: Mở rộng tập dữ liệu với thêm các hành động ký hiệu phổ biến khác (ví dụ: "giúp đỡ", "ok").
-Tối ưu hóa mô hình: Sử dụng kỹ thuật như pruning hoặc quantization để giảm kích thước mô hình, giúp chạy mượt mà trên thiết bị nhúng (embedded devices).
-Cải thiện giao diện: Phát triển giao diện người dùng thân thiện hơn (UI/UX) với hỗ trợ đa ngôn ngữ (như tiếng Anh, tiếng Trung) bằng cách tích hợp thêm các file âm thanh và font chữ phù hợp.
-Hỗ trợ và đóng góp / Support and Contribution
-Báo cáo lỗi / Report Issues: Nếu gặp lỗi, vui lòng tạo issue trên GitHub repository của dự án.
-Đóng góp / Contributions: Chào mừng bạn gửi pull request để cải thiện mã nguồn, thêm dữ liệu, hoặc đề xuất tính năng mới.
-Liên hệ: Gửi email đến [dangtruongduong2102@gmail.com] để được hỗ trợ thêm.
-Giấy phép / License
-Bạn có thể sử dụng, chỉnh sửa, và phân phối mã nguồn miễn phí, nhưng vui lòng giữ nguyên thông tin bản quyền Dang Truong Duong (Ozen).
+   git clone https://github.com/DangTruongDuong/sign-language-detection-using-lstm
+   cd sign-language-detection-using-lstm
