@@ -1,4 +1,8 @@
-# 🎓 ỨNG DỤNG NHẬN DIỆN CỬ CHỈ TAY HỖ TRỢ GIAO TIẾP CHO NGƯỜI KHUYẾT TẬT.
+<div align="center">
+
+# 🎓 ỨNG DỤNG NHẬN DIỆN CỬ CHỈ TAY HỖ TRỢ GIAO TIẾP CHO <br> NGƯỜI KHUYẾT TẬT
+
+</div>
 
 
 <div align="center">
