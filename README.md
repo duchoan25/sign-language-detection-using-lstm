@@ -86,7 +86,9 @@ so sánh hiệu suất với các mô hình khác
 
 
 ![image](https://github.com/user-attachments/assets/ed91a0ed-b02b-4b2f-9903-cbe8b563c4bf)
+
 ma trận nhầm lẫn
+
 
 1. Độ chính xác mô hình 
 Accuracy: 100% → Mô hình nhận diện hoàn hảo trên tập dữ liệu thử nghiệm.
