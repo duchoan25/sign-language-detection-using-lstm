@@ -91,11 +91,6 @@ Hệ thống được thiết kế với kiến trúc đa tầng:
 
 ## 🚀 Bắt đầu sử dụng
 
-### ⚡ Khởi động 
-   ```bash
-   Run_With_Sound.py or Run_No_Sound
-   ```
-
 ### 📥 Thu thập dữ liệu
    ```bash
    Thu_Thap_Data.py
@@ -104,6 +99,11 @@ Hệ thống được thiết kế với kiến trúc đa tầng:
 ### 🧠 Huấn luyện mô hình
    ```bash
    huan_luyen_mo_hinh.py
+   ```
+
+### ⚡ Khởi động 
+   ```bash
+   Run_With_Sound.py or Run_No_Sound
    ```
 
 ### 📊 Đánh giá mô hình
